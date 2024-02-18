@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ProductList from "@/components/ProductList";
 import SearchForm from "@/components/SearchForm";
 import axios from "@/lib/axios";
+import styles from "@/styles/Home.module.css";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -21,7 +22,7 @@ export default function Home() {
     <>
       <h1>JinyoungMall</h1>
       <SearchForm></SearchForm>
-      <ProductList products={products} />
+      <ProductList className={styles.products} products={products} />
     </>
   );
 }
