@@ -3,6 +3,7 @@ import ProductList from "@/components/ProductList";
 import SearchForm from "@/components/SearchForm";
 import axios from "@/lib/axios";
 import styles from "@/styles/Home.module.css";
+import Head from "next/head";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -20,6 +21,9 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>JinyoungMall</title>
+      </Head>
       <h1>JinyoungMall</h1>
       <SearchForm></SearchForm>
       <ProductList className={styles.products} products={products} />
