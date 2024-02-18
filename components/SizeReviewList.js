@@ -1,3 +1,5 @@
+import styles from "./SizeReviewList.module.css";
+
 function formatDate(date) {
   const MM = String(date.getUTCMonth() + 1).padStart(2, "0");
   const dd = String(date.getUTCDate()).padStart(2, "0");
@@ -20,11 +22,13 @@ const labels = {
 
 export default function SizeReviewList({ sizeReviews }) {
   return (
-    <ul>
+    <ul className={styles.sizeReviewList}>
       {sizeReviews.map((sizeReview) => (
-        <li key={sizeReview.id}>
+        <li key={sizeReview.id} className={styles.sizeReview}>
           <div>
-            <div>{formatDate(new Date(sizeReview.createdAt))}</div>
+            <div className={styles.date}>
+              {formatDate(new Date(sizeReview.createdAt))}
+            </div>
             <div>
               ({labels.sex[sizeReview.sex]} {sizeReview.height}cm 기준){" "}
               {sizeReview.size}
